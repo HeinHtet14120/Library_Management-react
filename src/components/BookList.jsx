@@ -8,6 +8,7 @@ import trash from '../assets/delete.svg';
 import edit from '../assets/edit.svg';
 import useFirestore from '../hooks/useFirestore';
 import { AuthContex } from '../contexts/AuthContex';
+import { data } from 'autoprefixer';
 
 
 export default function BookList() {
@@ -22,6 +23,8 @@ export default function BookList() {
     // let {data : books ,loading,error} = useFetch(`http://localhost:3000/books${search ? `?q=${search}`: ''}`);
 
     let {getCollection, deleteCollection} = useFirestore();
+
+    
 
     let { user } = useContext(AuthContex);
 
@@ -54,8 +57,8 @@ export default function BookList() {
                 
                 <NavLink to={`/books/${b.id}`} key={b.id} >
                    <div className={`p-4 border border-1 min-h-full rounded-lg ${isDark ? 'bg-dcard text-white border-primary' : ''}`} >
-                       <div>
-                            <img src={b.cover} alt="" />
+                       <div className={`shadow ${isDark ? ' shadow-blue-600' : 'shadow-dbg  '} `} >
+                            <img className='aspect-square object-cover' src={b.cover} alt="" />
                        </div>
                        
                        <div className='text-center space-y-2 mt-3'>

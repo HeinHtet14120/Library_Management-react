@@ -70,6 +70,8 @@ export default function Create() {
 
   let submitForm =  async(e) =>{
     e.preventDefault();
+     
+    console.log(title,description)
 
     let url = await uploadtoFirebase(file);
     let data = {
@@ -79,6 +81,8 @@ export default function Create() {
       uid : user.uid,
       cover : url
     }
+
+    
    
     let {addCollection,updateCollection} = useFirestore();
     

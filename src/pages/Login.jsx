@@ -35,11 +35,6 @@ export default function Login() {
     let backLog = () => {
         navigate('/login')
     }
-
-    
-
-    
-
     
   return (
     <div className="w-full max-w-lg mx-auto my-16">
